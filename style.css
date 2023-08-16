@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff8f0;
+}
+
+.accordian {
+  background-color: #00bfb2;
+  max-width: 900px;
+  min-height: 550px;
+  margin: 1.5rem;
+  border-radius: 25px;
+}
+
+h1 {
+  color: #fff8f0;
+  margin: 2rem;
+}
+
+.accordian .contentBox {
+  position: relative;
+  margin: 1rem 2rem;
+}
+
+.accordian .contentBox .heading {
+  border-radius: 16px 16px 0px 0px;
+  cursor: pointer;
+  background-color: #fff8f0;
+  position: relative;
+  padding: 0.5rem 2rem;
+}
+
+.accordian .contentBox .heading::before {
+  content: url(images/chevron-right.svg);
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+}
+
+.accordian .contentBox.active .heading::before {
+  content: url(images/chevron-down.svg);
+}
+
+.accordian .contentBox .content {
+  border-radius: 0px 0px 16px 16px;
+  position: relative;
+  padding: 0.2rem 3rem;
+  background-color: #91d9d4;
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  /* overflow-y: auto;  */ /*if used cause scroll bar to appear when the accordian is toggled*/
+}
+
+.accordian .contentBox.active .content {
+  height: 80px;
+  padding: 1rem 3rem;
+}
